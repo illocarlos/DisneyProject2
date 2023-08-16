@@ -1,0 +1,45 @@
+<div class="createCont mt-5 d-flex flex-column justify-content-center align-items-center">
+
+
+    <div class="formCreate  d-flex flex-column flex-nowrap justify-content-around align-items-center">
+        <h1>Create</h1>
+        <form class=" formCreatediv d-flex flex-column flex-nowrap justify-content-around align-items-center"
+            action="/create" method="post" enctype="multipart/form-data">
+
+            <div class="buttonCreate ">
+                <label for="username"></label>
+                <input id="username" type="text" name="username" placeholder="pick your name">
+            </div>
+
+            <div class="buttonCreate ">
+                <label for="email"></label>
+                <input id="email" type="email" name="email" placeholder="pick your email">
+            </div>
+            <div class="buttonCreate ">
+                <label for="birthday"></label>
+                <input id="birthday" type="date" name="birthday" placeholder="pick your birthday ">
+            </div>
+            <div class="buttonCreate ">
+                <label for="gender" for="gender" placeholder="gender "></label>
+                <select id="gender" type="text" name="gender">
+                    <option hidden selected>select gender</option>
+                    <option>male</option>
+                    <option>female</option>
+                    <option>nonbinary</option>
+                </select>
+            </div>
+            <div class="buttonCreate ">
+                <label for="password"></label>
+                <input id="password" type="password" name="password" placeholder="pick your pasword">
+            </div>
+
+            <div class="buttonCreate  mb-3">
+                <label class="buttonImage" for="image" class="form-label"> image</label>
+                <input class="input-btn" type="file" id="image" name="image">
+            </div>
+
+            <button class="indesLogIn" type="submit">submit</button>
+
+        </form>
+    </div>
+</div>

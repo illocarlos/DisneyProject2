@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div class="d-flex  justify-content-around">
+
+        <div class=" d-flex flex-column flex-nowrap justify-content-around align-items-center">
+
+            <form action="/create-event" method="post">
+                <div>
+                    <label class="labBack form-label" for="title">Title</label>
+                    <input class=" form-control" id="title" type="text" name="title" placeholder="Choose a title">
+                </div>
+                <div>
+                    <label class="  labBack form-label" for="description">Description</label>
+                    <input class="form-control" id="description" type="text" name="description"
+                        placeholder="Choose a description">
+                </div>
+                <div>
+                    <label class="labBack form-label" for="date">Date</label>
+                    <input class="form-control" id="date" type="date" name="date" placeholder="Choose a date">
+                </div>
+                <div>
+                    <label class=" labBack form-label" for="latitude">Latitude</label>
+                    <input class="form-control" id="latitude" type="text" name="latitude"
+                        placeholder="Choose a latitude">
+                </div>
+                <div>
+                    <label class=" labBack form-label" for="longitude">Longitude</label>
+                    <input class="form-control" id="longitude" type="text" name="longitude"
+                        placeholder="Choose a longitude">
+                </div>
+
+                <div class="  labBack d-flex justify-content-center mt-4 "> <button class=" indesLogIn mt-3"
+                        type="submit">Submit</button></div>
+
+
+            </form>
+
+        </div>
+
+        <div class="row m-3">
+
+            {{#each events}}
+
+
+            <div class="cardEvent d-flex  justify-content-center me-2 mt-4   card " style="width: 16rem;">
+
+                <img src="../../images/grupo-jpg.webp" alt="{{title}}">
+
+
+                <div class="mx-auto">
+                    <h5>{{title}}</h5>
+                </div>
+
+
+                <div class=" d-flex  justify-content-center">
+                    <a class="" href="/edit-event/{{_id}}" class="d-flex flex-row justify-content-center btn">Event
+                        details</a>
+                </div>
+            </div>
+
+            {{/each}}
+
+        </div>
+
+
+    </div>
+
+
+    <div class="video-container">
+
+        <video autoplay muted loop id="my-video" class="video">
+
+            <source src="../videos/mickey.mp4" type="video/mp4">
+        </video>
+
+    </div>
+</div>

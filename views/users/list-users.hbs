@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row m-3">
+
+        {{#each users }}
+
+
+        <div class="d-flex  justify-content-center me-3 mt-4  card " style="width: 18rem;">
+            <img src="{{image}}" alt="{{username}}">
+            <div class="mx-auto">
+                <h5>{{username}}</h5>
+            </div>
+            <div>
+                <a href="/details/{{_id}}" class="d-flex flex-row justify-content-center btn">profile</a>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+
+</div>

@@ -1,0 +1,241 @@
+@font-face {
+  font-family: "disney";
+  src: url('/fonts/disney.ttf') format('truetype');
+
+}
+
+
+
+h1 {
+  font-size: 4em;
+  color: white;
+
+}
+
+body {
+
+  font-family: "disney", Arial, Helvetica, sans-serif;
+
+}
+
+#myMap {
+  height: 60vh;
+
+  background-color: rgb(93, 93, 93);
+}
+
+
+.aHover:hover {
+
+  color: rgb(255, 5, 255);
+  transition: all .5s;
+
+}
+
+
+
+
+
+
+.input-btn {
+  display: none;
+}
+
+.logCont {
+  width: 100vw;
+  height: 70vh;
+}
+
+.buttonCreate {
+  background-color: white;
+  width: 20vw;
+
+}
+
+.buttonCreate input {
+  border: none;
+}
+
+.buttonCreate select {
+  border: none;
+
+}
+
+.formCreatediv {
+  height: 60vh;
+}
+
+.buttonImage:hover {
+  cursor: pointer;
+
+}
+
+.formDiv {
+  background-color: rgba(128, 128, 128, 0.656);
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.formLogin {
+  height: 50vh;
+
+}
+
+
+
+.formCreate {
+  background-color: rgba(128, 128, 128, 0.656);
+  width: 500px;
+  height: 600px;
+}
+
+.contImage {
+  background-image: url('../images/fotodisney.jpg');
+  z-index: -100;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+.logoMickey {
+  width: 50px;
+
+}
+
+
+
+.butomickey {
+
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+}
+
+.welch1 {
+
+  margin-top: 15vh;
+  margin-left: 10vh;
+}
+
+
+
+
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.277);
+
+}
+
+
+
+.btn {
+  width: auto;
+  height: auto;
+  background-color: blue;
+}
+
+
+
+.video-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  z-index: -30;
+}
+
+.video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.indesLogIn {
+  color: white;
+  background-color: rgba(13, 23, 220, 0.733);
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 12px;
+}
+
+.indesLogIn:hover {
+  color: rgba(251, 5, 255, 0.566);
+
+  transition: all .5s;
+}
+
+.indesLogIn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(50deg, blue, #00b7ff, #00b9ff, #00b110ff, blue,
+      #00b7ff, #00b9ff, #00b110ff, blue, #09b7ff, #00b9ff, #00b110ff);
+  background-size: 900%;
+  border-radius: 10px;
+  filter: blur(10px);
+  animation: glowing 25s linear infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0, 0;
+  }
+
+  20% {
+    background-position: 200%, 0;
+  }
+
+  40% {
+    background-position: 400%, 0;
+  }
+
+  60% {
+    background-position: 600%, 0;
+  }
+
+  80% {
+    background-position: 800%, 0;
+  }
+
+  100% {
+    background-position: 1000%, 0;
+  }
+
+}
+
+.labBack {
+  color: white;
+}
+
+.cardEvent {
+  width: 10vw;
+  height: auto;
+  background-color: rgba(128, 128, 128, 0.409);
+}
