@@ -1,4 +1,10 @@
-<form action="/search" method="post">
-    <input type="text" name="search_query">
-    <button type="submit">Submit</button>
-</form>
+{{#each characters.data}}
+
+{{name}}
+<img src="{{imageUrl}}" alt="{{name}}">
+
+{{/each}}
+
+{{characters.data.name}}
+
+<img src="{{characters.data.imageUrl}}" alt="{{characters.data.name}}">

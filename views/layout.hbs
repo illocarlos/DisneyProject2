@@ -41,13 +41,21 @@
             {{#unless loggedUser}}
             <li class="nav-item me-3">
                <a class="aHover nav-link" href="/login">login</a>
-            </li>
+
             <li class="nav-item me-3">
                <a class="aHover nav-link" href="/create">create</a>
             </li>
             {{/unless}}
-
-
+            {{#if showSearchBar}}
+            <li class="nav-item me-3 mt-1">
+               <div>
+                  <form class="form-inline" action="/search" method="post">
+                     <input class="searchbar" type="text" placeholder="Search a character" name="search_query">
+                     <button class="btn btn-outline-success" type="submit">Submit</button>
+                  </form>
+               </div>
+            </li>
+            {{/if}}
             {{#if loggedUser}}
             <li class="nav-item me-3">
                <a class="aHover nav-link" href="/list-users">list users</a>
