@@ -19,20 +19,31 @@ body {
 }
 
 #myMap {
-  height: 60vh;
+  height: 86vh;
+  background-color: rgb(93, 93, 93);
+}
 
+#myMapDetails {
+  height: 50vh;
+  width: 50vw;
   background-color: rgb(93, 93, 93);
 }
 
 
+
 .aHover:hover {
 
-  color: rgb(255, 5, 255);
+  color: rgb(255, 5, 155);
   transition: all .5s;
 
 }
 
+.botevent {
+  border-radius: 5px;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.612);
 
+}
 
 
 
@@ -183,7 +194,6 @@ a {
 
 .indesLogIn:hover {
   color: rgba(251, 5, 255, 0.566);
-
   transition: all .5s;
 }
 

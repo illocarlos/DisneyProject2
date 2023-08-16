@@ -44,6 +44,9 @@ app.use("/api", apiRoutes);
 const mapRoutes = require("./routes/map.routes")
 app.use("/", mapRoutes)
 
+
+
+
 const characterRoutes = require("./routes/character.routes");
 app.use('/', characterRoutes)
 

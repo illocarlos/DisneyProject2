@@ -1,7 +1,3 @@
-
-
-
-
 const initialCoords = { lat: 40.4460495560349, lng: - 3.6759638264748986 }
 
 let myMap
