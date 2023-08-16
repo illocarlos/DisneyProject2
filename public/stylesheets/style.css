@@ -239,3 +239,25 @@ a {
   height: auto;
   background-color: rgba(128, 128, 128, 0.409);
 }
+
+.searchbar {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+}
+
+.searchbar:focus{
+  outline: none;
+  border-color: #333;
+}
+
+.card-image {
+  height: 200px;
+  object-fit: cover
+}
+
+.card-style {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
