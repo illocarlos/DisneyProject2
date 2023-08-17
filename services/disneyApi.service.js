@@ -22,9 +22,6 @@ class disneyApiHandler {
         return this.axiosApp.get('/', { params: searchParam })
 
     }
-
-
-
 }
 
 const disneyApi = new disneyApiHandler()

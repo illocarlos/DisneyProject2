@@ -3,21 +3,22 @@ const { isLoggedIn } = require('../middlewares/route-guard')
 const disneyApi = require('../services/disneyApi.service')
 
 router.get('/characters', isLoggedIn, (req, res, next) => {
-    let page = req.query.page
 
-    if (!page) page = 1
+    let page = req.query.page || 1
 
     const nextPage = Number(page) + 1
     const prevPage = Number(page) - 1
     const showSearchBar = true
+
     disneyApi
         .getAllCharacters(page)
         .then(response => res.render('characters/list-characters', { characters: response.data, nextPage, prevPage, showSearchBar }))
         .catch(err => next(err))
-
 })
 
+
 router.get('/character/:id', isLoggedIn, (req, res, next) => {
+
     const { id: character_id } = req.params
 
     disneyApi
@@ -26,7 +27,9 @@ router.get('/character/:id', isLoggedIn, (req, res, next) => {
         .catch(err => next(err))
 })
 
+
 router.post('/search', isLoggedIn, (req, res, next) => {
+
     const { search_query } = req.body
     const showSearchBar = true
 

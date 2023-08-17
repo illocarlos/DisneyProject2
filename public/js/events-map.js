@@ -27,11 +27,10 @@ function getEventsData() {
         .get('/api/events')
         .then(response => printMarkers(response.data))
         .catch(err => console.log(err))
-
 }
 
 function printMarkers(event) {
-    console.log(event)
+
     event.forEach(elm => {
 
         const position = {
@@ -39,16 +38,11 @@ function printMarkers(event) {
             lng: elm.location.coordinates[0]
         }
 
-        console.log({ position })
         new google.maps.Marker({
             position,
             map: myMap,
             title: elm.name,
             icon: '/images/IMG_9696(1).png',
-
-
         })
-
     })
-
 }

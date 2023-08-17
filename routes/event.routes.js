@@ -30,8 +30,8 @@ router.post('/create-event', isLoggedIn, (req, res, next) => {
 })
 
 router.get('/edit-event/:id', isLoggedIn, (req, res, next) => {
-    const { id: event_id } = req.params
 
+    const { id: event_id } = req.params
 
     Event
         .findById(event_id)
@@ -47,6 +47,7 @@ router.get('/edit-event/:id', isLoggedIn, (req, res, next) => {
 })
 
 router.post('/edit-event/:id', isLoggedIn, checkAdminOrOwner, (req, res, next) => {
+
     const { id: event_id } = req.params
     const { title, description, date, latitude, longitude } = req.body
 
@@ -62,6 +63,7 @@ router.post('/edit-event/:id', isLoggedIn, checkAdminOrOwner, (req, res, next) =
 })
 
 router.post('/delete-event/:id', isLoggedIn, checkAdminOrOwner, (req, res, next) => {
+
     const { id: event_id } = req.params
 
     Event

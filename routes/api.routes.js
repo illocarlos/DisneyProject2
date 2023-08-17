@@ -3,14 +3,12 @@ const Event = require("../models/event.model");
 
 router.get('/events', (req, res, next) => {
 
-
     Event
         .find()
         .then(events => res.json(events))
         .catch(err => console.log(err))
 
 })
-
 
 router.get('/mapDetails', (req, res, next) => {
 
@@ -22,9 +20,5 @@ router.get('/mapDetails', (req, res, next) => {
         .catch(err => console.log(err))
 
 })
-
-
-
-
 
 module.exports = router

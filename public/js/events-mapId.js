@@ -36,7 +36,6 @@ const dateId = document.querySelector('#dateId').value
 
 function printMarkers() {
 
-
     const position = {
         lat: Number(lattId),
         lng: Number(lontId)
@@ -47,7 +46,4 @@ function printMarkers() {
         map: myMapId,
         icon: '/images/IMG_9696(1).png',
     })
-
-
-
 }
