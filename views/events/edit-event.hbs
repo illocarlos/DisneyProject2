@@ -1,6 +1,4 @@
-<h1>Edit event</h1>
-
-<div class="container">
+<div class=" logCont contatiner d-flex flex-column justify-content-center align-items-center">
     <form action="/edit-event/{{_id}}" method="post">
         <div>
             <label class="form-label" for="title">Title</label>
@@ -23,12 +21,10 @@
             <input class="form-control" id="longitude" type="text" name="longitude"
                 value="{{location.coordinates.[0]}}">
         </div>
-
-        <div class=" indesLogIn"> <button class="btn btn-dark mt-3" type="submit">Edit event</button></div>
-
+        <div class="d-flex justify-content-center">
+            <button class="d-flex  indesLogIn mt-3" type="submit">Edit event</button>
+        </div>
 
 
     </form>
 </div>
-
-<h1>{{owner._id}}</h1>

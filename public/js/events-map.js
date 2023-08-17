@@ -8,8 +8,6 @@ function init() {
 }
 
 
-
-
 function renderMap() {
 
     myMap = new google.maps.Map(
@@ -20,12 +18,7 @@ function renderMap() {
             center: initialCoords,
         }
     )
-
-
 }
-
-
-
 
 function getEventsData() {
 

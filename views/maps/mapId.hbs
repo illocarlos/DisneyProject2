@@ -1,18 +1,64 @@
 <div class="container">
 
-    {{!-- crear inpunts ocultos con la latitud y la longuitud para que lleguen al script, y desde el script lo pillais
-    --}}
-    <input type="hidden" id="eventId" value="{{id}}">
-    <input type="hidden" id="title" value="{{title}}">
-    <input type="hidden" id="descriptionId" value="{{description}}">
-    <input type="hidden" id="dateId" value="{{date}}">
-    <input type="hidden" id="lontId" value="{{location.coordinates.[1]}}">
-    <input type="hidden" id="lattId" value="{{location.coordinates.[0]}}">
+    <div class="d-flex justify-content-around mt-5">
+        <div>
 
-    <div>
-        <figure class="mt-4" id="myMapDetails" class=""></figure>
+
+            <div class="container mt-5">
+
+                <div>
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" id="title" type="text" name="title" value="{{title}}">
+                </div>
+                <div>
+                    <label class="form-label" for="description">Description</label>
+                    <input class="form-control" id="description" type="text" name="description" value="{{description}}">
+                </div>
+                <div>
+                    <label class="form-label" for="date">Date</label>
+                    <input class="form-control" id="date" type="date" name="date" value="{{date}}">
+                </div>
+                <div>
+                    <label class="form-label" for="latitude">Latitude</label>
+                    <input class="form-control" id="latitude" type="text" name="latitude"
+                        value="{{location.coordinates.[1]}}">
+                </div>
+                <div>
+                    <label class="form-label" for="longitude">Longtiude</label>
+                    <input class="form-control" id="longitude" type="text" name="longitude"
+                        value="{{location.coordinates.[0]}}">
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <input type="hidden" id="lontId" value="{{location.coordinates.[1]}}">
+            <input type="hidden" id="lattId" value="{{location.coordinates.[0]}}">
+
+
+            <figure class="mt-4" id="myMapDetails" class=""></figure>
+        </div>
     </div>
+    <div class="video-container">
+
+        <video autoplay muted loop id="my-video" class="video">
+
+            <source src="../videos/mickey.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script src="/js/events-mapId.js"></script>

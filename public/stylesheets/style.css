@@ -5,6 +5,18 @@
 }
 
 
+footer {
+  background-color: rgba(128, 128, 128, 0.656);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.afoter {
+  margin-left: 20px;
+}
 
 h1 {
   font-size: 4em;
@@ -24,8 +36,8 @@ body {
 }
 
 #myMapDetails {
-  height: 50vh;
-  width: 50vw;
+  height: 60vh;
+  width: 25vw;
   background-color: rgb(93, 93, 93);
 }
 
@@ -256,7 +268,7 @@ a {
   color: #333;
 }
 
-.searchbar:focus{
+.searchbar:focus {
   outline: none;
   border-color: #333;
 }

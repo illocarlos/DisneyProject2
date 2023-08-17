@@ -3,7 +3,7 @@ const User = require('../models/User.model')
 const bcrypt = require('bcryptjs')
 const { checkAdminOrOwner, isLoggedIn } = require('../middlewares/route-guard')
 const cloudinary = require('../middlewares/cloudinary.middleware')
-
+const { formatDate, formatTime } = require('../utils/date-utils')
 const saltRounds = 10
 
 
@@ -29,14 +29,18 @@ router.get('/details/:id', (req, res, next) => {
 
     User
         .findById(user_id)
-        .then(user => res.render('users/details', { user, userRoles }))
+        .then(user => {
+            user.formattedDate = formatDate(user.birthday)
+            user.formattedTime = formatTime(user.birthday)
+            res.render('users/details', { user, userRoles })
+
+        })
+
+
+
         .catch(err => next(err))
 
 })
-
-
-
-
 
 router.get('/edit-user/:id', checkAdminOrOwner, isLoggedIn, (req, res, next) => {
 
@@ -67,13 +71,6 @@ router.post('/edit-user/:id', checkAdminOrOwner, (req, res, next) => {
         .then(() => res.redirect('/list-users'))
         .catch(err => next(err))
 })
-
-
-
-
-
-
-
 
 router.post('/delete-user/:id', checkAdminOrOwner, (req, res, next) => {
 

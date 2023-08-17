@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Event = require('../models/event.model')
 const User = require('../models/User.model')
 const { checkAdminOrOwner, isLoggedIn } = require('../middlewares/route-guard');
-
+const { formatDate, formatTime } = require('../utils/date-utils')
 
 router.get('/create-event', isLoggedIn, (req, res, next) => {
 

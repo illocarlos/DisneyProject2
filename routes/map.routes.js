@@ -8,17 +8,17 @@ router.get("/map", (req, res, next) => {
 });
 
 
-router.get("/mapId", (req, res, next) => {
+router.get("/:id/mapId", (req, res, next) => {
 
     const { id: event_id } = req.params
 
-    //aqui conseguis el festival lo buscais en bbdd, y le pasais a la vista el objeto entero 
+
     Event
         .findById(event_id)
-        .then(event => res.render('map/mapId', event))
+        .then(event => res.render('maps/mapId', event))
         .catch(err => (console.log(err)))
 
-    res.render("maps/mapId")
+
 });
 
 
