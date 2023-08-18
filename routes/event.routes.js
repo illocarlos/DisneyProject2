@@ -2,14 +2,13 @@ const router = require('express').Router()
 const Event = require('../models/event.model')
 const User = require('../models/User.model')
 const { checkAdminOrOwner, isLoggedIn } = require('../middlewares/route-guard');
-const { formatDate, formatTime } = require('../utils/date-utils')
+
 
 router.get('/create-event', isLoggedIn, (req, res, next) => {
 
     Event
         .find()
         .then(events => res.render('events/create-event', { events }))
-        .then(() => res.render('events/create-event'))
         .catch(err => next(err))
 })
 
@@ -37,10 +36,11 @@ router.get('/edit-event/:id', isLoggedIn, (req, res, next) => {
         .findById(event_id)
         .populate('owner')
         .then(event => {
+
             if (event.owner._id.toString() === req.session.currentUser?._id || req.session.currentUser?.role === 'ADMIN') {
                 res.render('events/edit-event', event)
             } else {
-                res.redirect('/list-events')
+                res.redirect('/create-event')
             }
         })
         .catch(err => next(err))
@@ -58,19 +58,43 @@ router.post('/edit-event/:id', isLoggedIn, checkAdminOrOwner, (req, res, next) =
 
     Event
         .findByIdAndUpdate(event_id, { title, description, date, location })
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/create-event'))
         .catch(err => next(err))
 })
 
 router.post('/delete-event/:id', isLoggedIn, checkAdminOrOwner, (req, res, next) => {
 
     const { id: event_id } = req.params
-
+    console.log(event_id)
     Event
+
         .findByIdAndDelete(event_id)
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/create-event'))
         .catch(err => next(err))
 
+})
+
+router.get('/addAttendee/:id', (req, res, next) => {
+
+    const { id: event_id } = req.params
+    const { _id: user_id } = req.session.currentUser
+
+    Event
+        .findByIdAndUpdate(event_id, { $addToSet: { attendees: user_id } })
+        .then(() => res.redirect(`/${event_id}/mapId`))
+        .catch(err => next(err))
+
+})
+
+router.get('/removeAttendee/:id', (req, res, next) => {
+
+    const { id: event_id } = req.params
+    const { _id: user_id } = req.session.currentUser
+
+    Event
+        .findByIdAndUpdate(event_id, { $pull: { attendees: user_id } })
+        .then(() => res.redirect(`/${event_id}/mapId`))
+        .catch(err => next(err))
 })
 
 

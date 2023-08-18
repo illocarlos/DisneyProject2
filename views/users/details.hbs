@@ -1,29 +1,35 @@
-<div class=" d-flex justify-content-center mt-4">
+<div class="d-flex justify-content-center mt-5">
 
-    <div class="card d-flex justify-content-center" style="width: 15rem;">
+    <div class=" cardBody  card d-flex justify-content-center " style="width: 18rem;">
         <img class="imgprofile" src="{{user.image}}" alt="{{user.username}}">
-        <div class="card-body">
-            <h5 class="card-title">{{user.username}}</h5>
-            <p class="card-title">{{user.email}}</p>
-            <p class="card-title">{{user.formattedDate}} </p>
-            <div class="d-flex justify-content-around">
+        <div class="card-body ">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h5 class="card-title">{{user.username}}</h5>
+                <p class="card-title">{{user.email}}</p>
+                <p class="card-title">{{user.formattedDate}} </p>
 
+            </div>
+
+            <div class="detailsButton d-flex justify-content-around">
 
                 {{#if userRoles.isThisUser}}
-                <a href="/edit-user/{{user._id}}" class="btn btn-primary">edit</a>
+                <a href="/edit-user/{{user._id}}"
+                    class="detailsButton d-flex flex-row justify-content-center btn">edit</a>
                 <form action="/delete-user/{{user._id}}" method="post">
-                    <input class="btn btn-primary" type="submit" value="delete">
+                    <input class="detailsButton d-flex flex-row justify-content-center btn" type="submit"
+                        value="delete">
                 </form>
                 {{/if}}
 
-
-
                 {{#if userRoles.isAdmin}}
 
-                <a href="/edit-user/{{user._id}}" class="btn btn-primary">edit</a>
+                <a href="/edit-user/{{user._id}}"
+                    class="detailsButton d-flex flex-row justify-content-center btn">edit</a>
                 <form action="/delete-user/{{user._id}}" method="post">
-                    <input class="btn btn-primary" type="submit" value="delete">
+                    <input class="detailsButton d-flex flex-row justify-content-center btn" type="submit"
+                        value="delete">
                 </form>
+
                 {{/if}}
 
 

@@ -25,6 +25,13 @@ body {
   background-color: rgb(93, 93, 93);
 }
 
+.detailMaps {
+  color: white;
+  height: 60vh;
+  width: 25vw;
+  background-color: rgba(0, 0, 0, 0.675);
+}
+
 #myMapDetails {
   height: 60vh;
   width: 25vw;
@@ -92,13 +99,12 @@ body {
 
 .formLogin {
   height: 50vh;
-
 }
 
 
 
 .formCreate {
-  background-color: rgba(128, 128, 128, 0.656);
+  background-color: rgba(104, 102, 102, 0.656);
   width: 500px;
   height: 600px;
 }
@@ -113,7 +119,9 @@ body {
   background-repeat: no-repeat;
 }
 
-
+.cardUser {
+  background-color: rgba(255, 255, 255, 0.277);
+}
 
 
 
@@ -269,7 +277,18 @@ a {
 }
 
 .card-style {
+  background-color: rgba(255, 255, 255, 0.277);
+  color: black;
   height: 100%;
   max-height: 100%;
   overflow: hidden;
+}
+
+.cardBody {
+  background-color: rgba(128, 128, 128, 0.654);
+  color: rgb(0, 0, 0);
+}
+
+.detailsButton {
+  color: black;
 }

@@ -4,7 +4,9 @@ const { checkAdminOrOwner, isLoggedIn } = require('../middlewares/route-guard')
 const { formatDate, formatTime } = require('../utils/date-utils')
 
 
+
 router.get('/list-users', isLoggedIn, (req, res, next) => {
+
 
     User
         .find({ role: 'USER' })

@@ -40,10 +40,10 @@
          <div class="d-flex flex-row ">
             {{#unless loggedUser}}
             <li class="nav-item me-3">
-               <a class="aHover nav-link" href="/login">login</a>
+               <a class="aHover nav-link" href="/login">Login</a>
 
             <li class="nav-item me-3">
-               <a class="aHover nav-link" href="/create">create</a>
+               <a class="aHover nav-link" href="/create">Create</a>
             </li>
             {{/unless}}
             {{#if showSearchBar}}
@@ -58,14 +58,17 @@
             {{/if}}
             {{#if loggedUser}}
             <li class="nav-item me-3">
-               <a class="aHover nav-link" href="/list-users">list users</a>
+               <a class="aHover nav-link" href="/list-users">List users</a>
             </li>
             <li class="nav-item me-3">
-               <a class="aHover nav-link" href="/characters">character</a>
+               <a class="aHover nav-link" href="/characters">Character</a>
             </li>
 
             <li class="nav-item me-3">
-               <a class="aHover nav-link" href="/create-event">events</a>
+               <a class="aHover nav-link" href="/create-event">Events</a>
+            </li>
+            <li class="nav-item me-3">
+               <a class="aHover nav-link" href="/map">Map</a>
             </li>
 
 
@@ -75,7 +78,7 @@
 
             <li class="nav-item me-3">
 
-               <a class="aHover nav-link" href="/logout">log out</a>
+               <a class="aHover nav-link" href="/logout">Log out</a>
 
             </li>
 
@@ -97,12 +100,6 @@
 
 
    {{{body}}}
-
-   <script src="/js/script.js"></script>
-
-
-
-
 
 
 </body>
