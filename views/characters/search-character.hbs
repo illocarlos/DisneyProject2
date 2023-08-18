@@ -1,10 +1,21 @@
-{{#each characters.data}}
+<div class="container">
+    <div class="row d-flex justify-content-center">
 
-{{name}}
-<img src="{{imageUrl}}" alt="{{name}}">
+        {{#each characters}}
+        <div class=" col-3 mt-3 me-5">
+            <div class="card-style card" style="width: 18rem;">
+                <a href="{{sourceUrl}}">
+                    <img class="card-image card-img-top" src="{{imageUrl}}" alt="{{name}}">
 
-{{/each}}
+                    <div class="card-body d-flex justify-content-center">
+                </a>
 
-{{characters.data.name}}
+                <a href="{{sourceUrl}}" class="aHover card-title">{{name}}</a>
+            </div>
+        </div>
+    </div>
 
-<img src="{{characters.data.imageUrl}}" alt="{{characters.data.name}}">
+    {{/each}}
+
+
+</div>

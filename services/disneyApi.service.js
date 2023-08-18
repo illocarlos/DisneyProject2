@@ -18,10 +18,13 @@ class disneyApiHandler {
     }
 
     searchOneCharacter(character_name) {
+        console.log('SERVICIOS ON-------')
         const searchParam = new URLSearchParams({ name: character_name })
         return this.axiosApp.get('/', { params: searchParam })
 
     }
+
+
 }
 
 const disneyApi = new disneyApiHandler()

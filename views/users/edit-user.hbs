@@ -1,35 +1,36 @@
-<div class="container">
-    <form action="/edit-user/{{_id}}" method="post" {{!-- enctype="multipart/form-data" --}}>
+<div class="container logCont contatiner d-flex flex-column justify-content-center align-items-center ">
+    <form action="/edit-user/{{_id}}" method="post">
+        <div class="formDiv  d-flex flex-column flex-nowrap justify-content-around">
 
-        <div>
-            <label for="username"></label>
-            <input id="username" type="text" name="username" placeholder="pick your name" value="{{username}}">
-        </div>
+            <div class=" formLogin d-flex flex-column flex-nowrap justify-content-around align-items-center ">
+                <div>
+                    <label for=" username"></label>
+                    <input id="username" type="text" name="username" placeholder="pick your name" value="{{username}}">
+                </div>
 
-        <div>
-            <label for="email"></label>
-            <input id="email" type="email" name="email" placeholder="pick your email" value="{{email}}">
-        </div>
-        <div>
-            <label for="birthday"></label>
-            <input id="birthday" type="date" name="birthday" placeholder="pick your birthday " value="{{birthday}}">
-        </div>
-        <div>
-            <label for="gender" for="gender"></label>
-            <select id="gender" type="text" name="gender" placeholder="gender">
-                <option></option>
-                <option>male</option>
-                <option>female</option>
-                <option>nonbinary</option>
-            </select>
-        </div>
-        <div>
-            {{!-- <div>
-                <label for="password"></label>
-                <input id="password" type="password" name="password" placeholder="pick your pasword">
-            </div> --}}
-            <button type="submit">submit</button>
+                <div>
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" placeholder="pick your email" value="{{email}}">
+                </div>
+                <div>
+                    <label for="birthday"></label>
+                    <input id="birthday" type="date" name="birthday" placeholder="pick your birthday "
+                        value="{{birthday}}">
+                </div>
+                <div>
+                    <label for="gender" for="gender"></label>
+                    <select id="gender" type="text" name="gender" placeholder="gender">
+                        <option>{{gender}}</option>
+                        <option>male</option>
+                        <option>female</option>
+                        <option>nonbinary</option>
+                    </select>
+                </div>
+                <div>
+
+                    <button class="indesLogIn" type="submit">submit</button>
 
     </form>
-
+</div>
+</div>
 </div>

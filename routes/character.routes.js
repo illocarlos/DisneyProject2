@@ -16,26 +16,19 @@ router.get('/characters', isLoggedIn, (req, res, next) => {
         .catch(err => next(err))
 })
 
-
-router.get('/character/:id', isLoggedIn, (req, res, next) => {
-
-    const { id: character_id } = req.params
-
-    disneyApi
-        .getOneCharacter(character_id)
-        .then(response => res.render('characters/character', response.data))
-        .catch(err => next(err))
-})
-
-
 router.post('/search', isLoggedIn, (req, res, next) => {
+
+    console.log('CONTROLLER ON-------')
 
     const { search_query } = req.body
     const showSearchBar = true
 
     disneyApi
         .searchOneCharacter(search_query)
-        .then(response => res.render('characters/search-character', { characters: response.data, showSearchBar }))
+        .then(response => {
+            const charactersArray = Array.isArray(response.data.data) ? response.data.data : [response.data.data]
+            res.render('characters/search-character', { characters: charactersArray, showSearchBar })
+        })
         .catch(err => next(err))
 })
 

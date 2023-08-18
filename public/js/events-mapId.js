@@ -1,6 +1,3 @@
-
-
-
 const lattId = document.querySelector('#lontId').value
 const lontId = document.querySelector('#lattId').value
 const initialCoords = { lat: Number(lattId), lng: Number(lontId) }
@@ -23,16 +20,11 @@ function renderMap() {
         document.querySelector('#myMapDetails'),
         {
             zoom: 12,
-            center: initialCoords
+            center: initialCoords,
+            styles: mapStyles.fantasy
         }
     )
 }
-
-const eventId = document.querySelector('#eventId').value
-const title = document.querySelector('#title').value
-const descriptionId = document.querySelector('#descriptionId').value
-const dateId = document.querySelector('#dateId').value
-
 
 function printMarkers() {
 

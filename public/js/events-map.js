@@ -14,8 +14,9 @@ function renderMap() {
 
         document.querySelector('#myMap'),
         {
-            zoom: 15,
+            zoom: 7,
             center: initialCoords,
+            styles: mapStyles.fantasy
         }
     )
 }
